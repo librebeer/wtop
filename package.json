@@ -1,0 +1,27 @@
+{
+  "name": "@librebeer/wtop",
+  "version": "1.0.0",
+  "description": "Process monitor for specific programs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/librebeer/wtop.git"
+  },
+  "keywords": [
+    "process",
+    "monitor"
+  ],
+  "author": "librebeer organization",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/librebeer/wtop/issues"
+  },
+  "homepage": "https://github.com/librebeer/wtop#readme",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^3.5.5"
+  }
+}
