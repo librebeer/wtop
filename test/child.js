@@ -14,9 +14,3 @@ var repeat = setInterval(() => {
 var exit = function() {
   clearInterval(repeat);
 };
-
-process.on('message', function(msg){
-    if(msg === 'get_mem_usage'){
-        process.send({memUsage: process.memoryUsage()});
-    }
-});
