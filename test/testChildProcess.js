@@ -13,6 +13,7 @@ var timeOfLife = 60;
 // create child that does nothing
 var child = fork(__dirname + '/child.js' , [timeOfLife]);
 
+
 console.log('wating a second for child creation.');
 console.log('Parent PID', process.pid);
 console.log('child PID:', child.pid);
