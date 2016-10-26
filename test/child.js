@@ -7,7 +7,7 @@ var max = process.argv[2];
 var n = 1;
 
 var repeat = setInterval(() => {
-  (n < max)? n++ : exit();ls
+  (n < max)? n++ : exit();
   //console.log('I want beer');
 },1000);
 
