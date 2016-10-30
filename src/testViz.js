@@ -1,4 +1,4 @@
-*
+/*
  * This test create a child process which spawn new NodeJS instance
  * that is an independent process with a code that does nothing
  * the IMPORTANT_PART is that PRINT children process INFO
@@ -21,7 +21,7 @@ console.log('Child PID:         ', child.pid);
 console.log('life time of child:', timeOfLife, 's');
 
 // init function for get JSON with info every 2 seconds
-getInfo.init(2000,child.pid);
+getInfo.init(2000, child.pid);
 
 var viz = null;
 
