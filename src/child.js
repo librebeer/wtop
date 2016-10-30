@@ -4,12 +4,17 @@
 */
 
 var max = process.argv[2];
-var n = 1;
+var n = 1, m = 0;
+var vec = [];
 
 var repeat = setInterval(() => {
   (n < max)? n++ : exit();
-  //console.log('I want beer');
-},1000);
+  m = 0;
+  for(var i = 0; i < n*n*n*n; i++)
+    m += i;
+  vec.push(m)
+  //console.log('I want beer ' + m);
+}, 500);
 
 var exit = function() {
   clearInterval(repeat);
