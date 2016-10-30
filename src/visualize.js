@@ -1,34 +1,35 @@
 var blessed = require('blessed')
-,contrib = require('blessed-contrib')
-, screen = blessed.screen();
-
-var visualizer = function(info) {
-  this.bar = contrib.bar(
+, contrib = require('blessed-contrib')
+, screen = blessed.screen()
+, bar = contrib.bar(
       { label: 'Server Utilization (%)'
         , barWidth: 4
           , barSpacing: 6
           , xOffset: 0
           , maxHeight: 9
           , height: "40%"});
-  console.log("Hi");
-  this.screen = screen;
+screen.append(bar);
+screen.key(['escape', 'q', 'C-c'], function(ch, key) {
+  return process.exit(0);
+});
 
-  this.screen.append(this.bar);
+var visualizer = function(info) {
   
-  this.update(info);
+  bar.setData(
+             { titles: ['%CPU', '%MEM']
+               , data: [info['%CPU'], info['%MEM']]});
 
-  this.screen.key(['escape', 'q', 'C-c'], function(ch, key) {
-    return process.exit(0);
-  });
-  console.log("Hi i'm going to render");
-  this.screen.render()
+  screen.render()
 }
 
 visualizer.prototype.update = function(info) {
-  this.bar.setData(
+  if(info != null) {
+  bar.setData(
              { titles: ['%CPU', '%MEM']
-               , data: [info['%CPU'], info['%MEM']]})
-  
+             , data: [info['%CPU'], info['%MEM']]});
+  //console.log(info['%CPU']);
+  screen.render();
+  }
 }
 
 module.exports = visualizer;
