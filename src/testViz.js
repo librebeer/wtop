@@ -21,7 +21,7 @@ console.log('Child PID:         ', child.pid);
 console.log('life time of child:', timeOfLife, 's');
 
 // init function for get JSON with info every 2 seconds
-getInfo.init(2000, child.pid);
+getInfo.init(100, child.pid);
 
 var viz = null;
 
